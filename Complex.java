@@ -26,12 +26,29 @@ public class Complex {
   }
   //For formatting output, overload the toString function
   //given by Java Base Class "Template"
-  public string toString () {
+  public String toString () {
     return "" + realPart + " + " + imgPart + " i ";
   }
 
   public Complex add(Complex rhs) {
     return new Complex(realPart + rhs.getRealPart(),
                         imgPart + rhs.getImgPart());
+  }
+  public Complex subtract(Complex subend) {
+    return new Complex(realPart - subend.getRealPart(),
+                        imgPart - subend.getImgPart());
+  }
+
+  public boolean equals(Object anotherObject) {
+    Complex temp = new Complex();
+    boolean same = false;
+
+    if (anotherObject instanceof Complex) {
+      if ((realPart == temp.getRealPart()) && (imgPart == temp.getImgPart())); {
+        same = true;
+      }
+    }
+
+    return same;
   }
 } //end class
